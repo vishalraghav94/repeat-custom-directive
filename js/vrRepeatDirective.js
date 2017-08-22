@@ -1,11 +1,14 @@
 /**
  * Created by apple on 07/07/17.
  */
-myApp.directive('vrRepeat',[ function () {
+myApp.directive('vrRepeat',[ '$compile', function ($compile) {
     return {
         restrict: 'EA',
         link: function (scope, element, attr) {
             var newEle = element[0].cloneNode(true);
+            var thisScope = scope.$new(true);
+            scope.x = "hello i m isolated";
+            console.log(element);
             var attributeString = attr.vrRepeat;
             console.log(attributeString);
             var values = attributeString.split(' ');
@@ -18,6 +21,7 @@ myApp.directive('vrRepeat',[ function () {
                 console.log('hi');
                 newEle = element[0].cloneNode(true);
                 element[0].parentNode.insertBefore(newEle, element[0].nextElementSibling);
+
             }
 
         }
