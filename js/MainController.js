@@ -6,7 +6,6 @@ myApp.controller('myController', ['$scope','$interval', '$compile', function ($s
     //console.log($scope.pattern);
     //console.log("hello");
     $scope.pattern = ['hello', 'are', 'you', 'i', 'am', 'fine'];
-    $scope.x = "hello i m not isolated";
 
    // $scope.pattern = "";
 }]);
